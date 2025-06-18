@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كافيه تحفة | Tohfa Café - السعودية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee': {
+                            '50': '#f8f3ec',
+                            '100': '#f0e5d3',
+                            '200': '#e2caa8',
+                            '300': '#d1a873',
+                            '400': '#c18b4e',
+                            '500': '#b5753e',
+                            '600': '#9a5b33',
+                            '700': '#7c462d',
+                            '800': '#673a2a',
+                            '900': '#573227',
+                            '950': '#301813',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .coffee-pattern {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23d1b38c" opacity="0.2" d="M30,20 Q50,10 70,20 T90,40 Q100,60 90,80 T70,100 Q50,90 30,100 T10,80 Q0,60 10,40 T30,20" /></svg>');
+            background-size: 150px;
+        }
+        .transition-slow {
+            transition: all 0.5s ease;
+        }
+        .nav-scrolled {
+            background-color: rgba(119, 77, 51, 0.95);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-coffee-900">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/966501234567" target="_blank" class="fixed bottom-6 left-6 z-50 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg flex items-center transition-slow">
+        <i class="fab fa-whatsapp ml-2 text-xl"></i>
+        <span>تواصل معنا عبر واتساب</span>
+    </a>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="fixed w-full z-40 py-4 transition-slow">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white">كافيه تحفة</a>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 space-x-reverse">
+                    <a href="#home" class="text-white hover:text-coffee-200 transition-slow">الرئيسية</a>
+                    <a href="#about" class="text-white hover:text-coffee-200 transition-slow">عن المقهى</a>
+                    <a href="#menu" class="text-white hover:text-coffee-200 transition-slow">قائمتنا</a>
+                    <a href="#gallery" class="text-white hover:text-coffee-200 transition-slow">معرض الصور</a>
+                    <a href="#contact" class="text-white hover:text-coffee-200 transition-slow">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-coffee-700 mt-4 py-4 rounded-lg">
+            <div class="container mx-auto px-6 flex flex-col space-y-4">
+                <a href="#home" class="text-white hover:text-coffee-200 transition-slow">الرئيسية</a>
+                <a href="#about" class="text-white hover:text-coffee-200 transition-slow">عن المقهى</a>
+                <a href="#menu" class="text-white hover:text-coffee-200 transition-slow">قائمتنا</a>
+                <a href="#gallery" class="text-white hover:text-coffee-200 transition-slow">معرض الصور</a>
+                <a href="#contact" class="text-white hover:text-coffee-200 transition-slow">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+<!-- Hero Section with Image Background -->
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 bg-[url('https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-coffee-900 opacity-40"></div>
+    <div class="container mx-auto px-6 py-20 z-10 text-center">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">كافيه تحفة</h1>
+        <p class="text-xl md:text-2xl text-amber-100 mb-8">أصالة الطعم وراحة البال في الرياض</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#menu" class="bg-amber-700 hover:bg-amber-800 text-white px-8 py-3 rounded-full text-lg font-medium inline-block transition-slow">
+                شوف قائمتنا
+            </a>
+            <a href="#contact" class="border-2 border-white hover:bg-white hover:text-coffee-800 text-white px-8 py-3 rounded-full text-lg font-medium inline-block transition-slow">
+                احجز طاولتك
+            </a>
+        </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-amber-100 to-transparent"></div>
+</section>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-coffee-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="كافيه تحفة من الداخل" 
+                         class="rounded-xl shadow-lg w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 text-coffee-800">عن كافيه تحفة</h2>
+                    <p class="text-lg mb-4 text-coffee-700">
+                        كافيه تحفة في الرياض هو وجهتك المثالية لعشاق القهوة العربية الأصيلة والجو الهادئ. نقدم لكم تشكيلة مميزة من المشروبات الساخنة والباردة المحضرة بأيدي خبرائنا وبأجود أنواع الحبوب.
+                    </p>
+                    <p class="text-lg mb-6 text-coffee-700">
+                        تأسس المقهى عام 2022 بهدف تقديم تجربة فريدة تجمع بين الأصالة والحداثة، في مساحة مصممة بعناية توفر لكم الراحة والاسترخاء وسط أجواء سعودية أصيلة.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-coffee text-coffee-600 text-2xl ml-2"></i>
+                            <span>قهوة سعودية أصيلة</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-wifi text-coffee-600 text-2xl ml-2"></i>
+                            <span>واي فاي مجاني</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-coffee-600 text-2xl ml-2"></i>
+                            <span>مفتوح يومياً 7 الصبح - 12 الليل</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-parking text-coffee-600 text-2xl ml-2"></i>
+                            <span>مواقف مجانية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-coffee-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-coffee-800">قائمتنا</h2>
+            
+            <!-- Hot Drinks -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-semibold mb-8 text-coffee-700 border-b-2 border-coffee-200 pb-2">مشروبات ساخنة</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-slow">
+                        <img src="Turkish • Coffee.jfif" alt="قهوة تركية" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">قهوة سعودية</h4>
+                            <p class="text-coffee-600 font-medium">15 ريال</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-slow">
+                        <img src="Cappuccino.jpg" alt="كابتشينو" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">كابتشينو</h4>
+                            <p class="text-coffee-600 font-medium">20 ريال</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-slow">
+                        <img src="green-tea.jpg" alt="شاي بالنعناع" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">شاي سعودي</h4>
+                            <p class="text-coffee-600 font-medium">12 ريال</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cold Drinks -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-semibold mb-8 text-coffee-700 border-b-2 border-coffee-200 pb-2">مشروبات باردة</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-slow">
+                        <img src="Raw Boost Energy Drink.jpg" alt="آيس كوفي" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">آيس كوفي</h4>
+                            <p class="text-coffee-600 font-medium">22 ريال</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-slow">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="ميلك شيك" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">ميلك شيك</h4>
+                            <p class="text-coffee-600 font-medium">25 ريال</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-slow">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="عصير طازج" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">عصير طازج</h4>
+                            <p class="text-coffee-600 font-medium">18 ريال</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desserts -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-8 text-coffee-700 border-b-2 border-coffee-200 pb-2">حلويات</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-slow">
+                        <img src="Kunafa - Order Now!.jfif" alt="كنافة" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">كنافة نابلسية</h4>
+                            <p class="text-coffee-600 font-medium">30 ريال</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-slow">
+                        <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="تشيز كيك" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">تشيز كيك</h4>
+                            <p class="text-coffee-600 font-medium">35 ريال</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-slow">
+                        <img src="https://images.unsplash.com/photo-1602351447937-745cb720612f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="كيكة الشوكولاتة" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold mb-2">كيكة الشوكولاتة</h4>
+                            <p class="text-coffee-600 font-medium">28 ريال</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-coffee-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-coffee-800">معرض الصور</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-slow">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="كافيه تحفة" 
+                         class="w-full h-48 object-cover hover:scale-105 transition-slow">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-slow">
+                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="كافيه تحفة" 
+                         class="w-full h-48 object-cover hover:scale-105 transition-slow">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-slow">
+                    <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="كافيه تحفة" 
+                         class="w-full h-48 object-cover hover:scale-105 transition-slow">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-slow">
+                    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="كافيه تحفة" 
+                         class="w-full h-48 object-cover hover:scale-105 transition-slow">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-slow">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="كافيه تحفة" 
+                         class="w-full h-48 object-cover hover:scale-105 transition-slow">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-slow">
+                    <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="كافيه تحفة" 
+                         class="w-full h-48 object-cover hover:scale-105 transition-slow">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-slow">
+                    <img src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="كافيه تحفة" 
+                         class="w-full h-48 object-cover hover:scale-105 transition-slow">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-slow">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="كافيه تحفة" 
+                         class="w-full h-48 object-cover hover:scale-105 transition-slow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-coffee-800 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">تواصل معنا</h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-6">معلومات التواصل</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-coffee-300 text-xl mt-1 ml-4"></i>
+                            <div>
+                                <h4 class="font-medium">العنوان</h4>
+                                <p class="text-coffee-200">حي السفارات، الرياض، المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-coffee-300 text-xl mt-1 ml-4"></i>
+                            <div>
+                                <h4 class="font-medium">الهاتف</h4>
+                                <p class="text-coffee-200">+966 50 123 4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-coffee-300 text-xl mt-1 ml-4"></i>
+                            <div>
+                                <h4 class="font-medium">البريد الإلكتروني</h4>
+                                <p class="text-coffee-200">info@tohfacafe.sa</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-coffee-300 text-xl mt-1 ml-4"></i>
+                            <div>
+                                <h4 class="font-medium">ساعات العمل</h4>
+                                <p class="text-coffee-200">يومياً من 7 الصبح حتى 12 الليل</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-medium mb-4">تابعنا على</h4>
+                        <div class="flex space-x-4 space-x-reverse">
+                            <a href="#" class="bg-coffee-700 hover:bg-coffee-600 w-10 h-10 rounded-full flex items-center justify-center transition-slow">
+                                <i class="fab fa-snapchat"></i>
+                            </a>
+                            <a href="#" class="bg-coffee-700 hover:bg-coffee-600 w-10 h-10 rounded-full flex items-center justify-center transition-slow">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-coffee-700 hover:bg-coffee-600 w-10 h-10 rounded-full flex items-center justify-center transition-slow">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-6">أرسل لنا رسالة</h3>
+                    
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-2">الاسم</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 rounded bg-coffee-700 border border-coffee-600 focus:outline-none focus:ring-2 focus:ring-coffee-500 text-white placeholder-coffee-400">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-2">البريد الإلكتروني</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 rounded bg-coffee-700 border border-coffee-600 focus:outline-none focus:ring-2 focus:ring-coffee-500 text-white placeholder-coffee-400">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block mb-2">رقم الجوال</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 rounded bg-coffee-700 border border-coffee-600 focus:outline-none focus:ring-2 focus:ring-coffee-500 text-white placeholder-coffee-400">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2">الرسالة</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 rounded bg-coffee-700 border border-coffee-600 focus:outline-none focus:ring-2 focus:ring-coffee-500 text-white placeholder-coffee-400"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-3 rounded font-medium transition-slow">
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.186965643344!2d46.67282131500078!3d24.81383898407141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee3b9b8b6e1e1%3A0x9bc8e8b5e7c5e5e5!2sRiyadh%2C%20Saudi%20Arabia!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-coffee-900 text-coffee-200 py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>© كافيه تحفة 2025 - جميع الحقوق محفوظة</p>
+                </div>
+                <div class="flex space-x-6 space-x-reverse">
+                    <a href="#" class="hover:text-white transition-slow">شروط الاستخدام</a>
+                    <a href="#" class="hover:text-white transition-slow">سياسة الخصوصية</a>
+                    <a href="#" class="hover:text-white transition-slow">الأسئلة الشائعة</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Initialize navbar background
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.style.backgroundColor = 'transparent';
+            }
+        });
+    </script>
+</body>
+</html>
